@@ -1,0 +1,211 @@
+/*Theme Name: DogmaWP Child
+Theme URI: http://themeforest.net/themes/dogmawp
+Description: A Dogma  Creative Responsive Architecture Theme is perfect if you like a clean and modern design. This template is ideal for architects, furniture designers, photographers, and those who need an easy, attractive and effective way to share their work with clients..
+Version: 2.0
+Author: Vrweb
+Author URI: http://vrweb.dk
+Template: dogmawp
+License:
+License URI:
+Tags: two-columns, fluid-layout, custom-background, custom-colors, featured-images, theme-options
+*/
+
+/*------   Header  ------------------------------------------------------*/
+header {
+	background:#1f1b1c;
+}
+
+
+/*------   Navigation  ------------------------------------------------------*/
+.nav-button span{
+	background:#fff;
+}
+.nav-inner {
+	background:#1f1b1c;
+}
+.nav-inner nav li {
+	border-bottom:0;
+}
+.nav-inner nav li a {
+	color:#fff;
+}
+.nav-inner nav li a:hover{
+	color:#f3601d;
+}
+.nav-inner nav li ul li a:hover {
+	text-decoration:none;
+}
+
+
+/*------   Single post  ------------------------------------------------------*/
+.single-post .blog-text,
+.single-post .sidebar {
+	display: inline-block;
+	vertical-align: top;
+	max-width: 75%;
+}
+.single-post .sidebar {
+	max-width: 25%;
+}
+@media only screen and  (max-width: 756px) {
+	.single-post .blog-text,
+	.single-post .sidebar {
+		display: block;
+		max-width: 100%;
+		float: none;
+		padding-top: 70px;
+		clear: both;
+	}
+}
+
+
+/*------ Contacts------------------------------------------------*/
+.contact-list li a {
+	color: #000000;
+}
+.contact-list li a:hover {
+	text-decoration:none;
+}
+
+/*------ share------------------------------------------------*/
+.share-icon:hover,
+.show-share span:hover {
+	text-decoration:none;
+}
+.share-inner {
+	z-index:20;
+}
+
+
+/*------  portfolio ------------------------------------------------------*/
+.wh-info-box {
+	cursor:pointer;
+}
+.wh-info-box a {
+	font-family:'Nunito';
+	color:#fff;
+}
+.wh-info-box a:hover {
+	text-decoration:none;
+	opacity:0.7;
+}
+.wh-info-box span {
+	font-family:'Nunito';
+	color:#fff;
+}
+.wh-info-box:before {
+	background:#1f1b1c;
+}
+.gallery-item-second .wh-info-box a{
+	font-size:28px;
+}
+.gallery-item:hover  .wh-info-box {
+	opacity:0.8;
+}
+
+.filter-vis-line {
+    float: left;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-left: 10px;
+    width: 100%;
+}
+.filter-vis-line  .gallery-filters {
+	background: none;
+}
+.filter-vis-line  .gallery-filters a {
+	color:#1f1b1c;
+	font-family:'Nunito';
+}
+.filter-vis-line  .gallery-filters a.gallery-filter-active , .filter-vis-line  .gallery-filters a:hover {
+	color:#f3601d;
+}
+.grid-item h3:hover {
+	text-decoration:none;
+}
+.fixed-info-container {
+	padding:70px 30px 80px 30px;	
+}
+.project-details li {
+	font-size:13px;
+	line-height:15px;
+	color: gray;
+}
+
+/* --------- Links  --------------------------------------*/
+.btn {
+	color:#f3601d;
+	border:2px solid #f3601d;
+	background:#fff;
+	border-radius:20px;
+}
+.blog-text h3 a{
+	color:#1f1b1c;
+}
+
+.home #logo{
+	display:none;
+}
+.wpmlpos {
+	position:absolute;
+	top:19px;
+	right:50px;
+	z-index:21;
+	cursor:pointer;
+}
+.case-title{
+	height:70px;
+}
+.cases a h4:hover{
+	color:#f3601d;
+}
+
+
+/*------   Miscelaneous  ------------------------------------------------------*/
+.l-line {
+	background:#1f1b1c;
+}
+.l-line span{
+	background:#f3601d;
+}
+.dec-text {
+	font-family:'Nunito';
+}
+.header-title h2:hover {
+	text-decoration: none;
+}
+.enter-wrap-holder {
+	left:50%;
+}
+.enter-wrap h4:hover {
+	text-decoration:none;
+}
+.wpmlpos #lang_sel_list a,
+.wpmlpos #lang_sel_list a:visited {
+	background: transparent;
+}
+#lang_sel_list ul a {
+	color: #fff;
+}
+#lang_sel_list a.lang_sel_sel {
+	color: gray;
+}
+.sfsi_widget {
+	clear: both;
+}
+
+
+/*------  footer ------------------------------------------------------*/
+footer {
+	background:#1f1b1c;
+	bottom: 0 !important;
+}
+.footer-social li a span {
+	color: #fff;
+}
+.footer-social li a span:hover {
+	color:#f3601d;
+}
+.policy-box {
+	color: #fff;
+}

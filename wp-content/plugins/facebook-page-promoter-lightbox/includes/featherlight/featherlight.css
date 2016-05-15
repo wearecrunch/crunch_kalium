@@ -1,0 +1,138 @@
+/**
+ * ArevicoModal - ultra slim jQuery lightbox
+ * Version 1.3.2 - http://noelboss.github.io/ArevicoModal/
+ *
+ * Copyright 2015, Noël Raoul Bossart (http://www.noelboss.com)
+ * MIT Licensed.
+**/
+@media all {
+
+	html.arvnoscroll{
+		overflow: hidden;
+	}
+
+	.arevicofl * {
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+	.ArevicoModal {
+		display: none;
+		/* dimensions: spanning the background from edge to edge */
+		position:fixed;
+		top: 0; right: 0; bottom: 0; left: 0;
+		z-index: 2147483646; /* z-index needs to be >= elements on the site. */
+
+		/* position: centering content */
+		text-align: center;
+
+		/* insures that the ::before pseudo element doesn't force wrap with fixed width content; */
+		white-space: nowrap;
+
+		/* styling */
+		background: none;	
+
+		overflow-y: auto;
+	}
+
+	.ArevicoModal-bg{
+		display: none;
+		/* dimensions: spanning the background from edge to edge */
+		position:fixed;
+		top: 0; right: 0; bottom: 0; left: 0;
+		z-index: 2147483600; /* z-index needs to be >= elements on the site. */
+
+		/* position: centering content */
+		text-align: center;
+
+		/* insures that the ::before pseudo element doesn't force wrap with fixed width content; */
+		white-space: nowrap;
+
+		/* styling */
+	
+		background: #333;
+		opacity: 0.8;			
+	}
+	
+	.ArevicoModal:before {
+		/* position: trick to center content vertically */
+		content: '';
+		display: inline-block;
+		height: 100%;
+		vertical-align: middle;
+		margin-right: -0.25em;
+	}
+
+	.ArevicoModal .ArevicoModal-content {
+		/* make content container for positioned elements (close button) */
+		position: relative;
+
+		/* position: centering vertical and horizontal */
+		text-align: left;
+		vertical-align: middle;
+		display: inline-block;
+
+		/* dimensions: cut off images */
+	
+		/* dimensions: handling small or empty content */
+		
+		/* dimensions: handling large content */
+		margin-left: 5%;
+		margin-right: 5%;
+		/* max-height: 95%;/* 
+
+		/* styling */
+		background: #ffffff;
+		overflow: visible;
+
+		/* reset white-space wrapping */
+		white-space: normal;
+
+
+	-webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+	   -moz-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+	        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+	}
+
+	/* contains the content */
+	.ArevicoModal .ArevicoModal-inner {
+		/* make sure its visible */
+		display: block;
+	}
+
+	.ArevicoModal .ArevicoModal-close-icon {
+		/* position: centering vertical and horizontal */
+		position: absolute;
+		z-index: 214748369;
+		top: -15px;
+		right: -15px;
+		/* dimensions: 25px x 25px */
+		line-height: 30px;
+		width: 30px;
+		height: 30px;
+		/* styling */
+		content: '&nbsp;'
+		cursor: pointer;
+		text-align: center;
+		font-family: Arial, sans-serif;
+		background: url('close.png'); /* Set the background in case it overlaps the content */
+		color: #000;
+	}
+
+
+	.ArevicoModal iframe {
+		/* styling */
+		border: none;
+	}
+}
+
+/* handling phones and small screens */
+@media only screen and (max-width: 1024px) {
+	.ArevicoModal .ArevicoModal-content {
+		/* dimensions: maximize lightbox with for small screens */
+		margin-left: 10px;
+		margin-right: 10px;
+		max-height: 98%;
+	}
+}

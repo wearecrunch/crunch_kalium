@@ -1,0 +1,221 @@
+.arv-sortable{
+  background:white;border:2px dashed black;padding:10px;font-size:18px;margin-bottom:10px;pointer:hand;
+}
+
+.arv-opt .error-label{
+  display: block;
+  color: red;
+  padding: 5px 0 5px 0;
+  vertical-align: baseline;
+}
+
+.arv-opt .arevico-updated{
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  background:white;
+  font-weight: 900;
+  font-size: 16px;
+  border: 1px solid #e6e6e6;
+  padding:10px;
+}
+
+.arv-opt .updated a,
+.arv-opt .faqsection {
+  text-decoration: underline;
+}
+
+html body .inv{
+  display: none; 
+}
+
+html body .cb{
+  clear: both;
+}
+
+.tab.tab-inactive{
+  display: none;
+}
+
+
+html body .topic-inactive{
+  display: none;
+}
+
+html body .topic-active{
+  display: block;
+}
+
+html body .tile{
+  background: white;
+  display:block;
+  padding:10px;
+  text-align: center;
+  height:20px;
+  line-height: 20px;
+  border-radius:5px;
+  border:1px solid #0f364c;
+  color:#0f364c;
+}
+html body .tile:hover,
+html body .tile:focus{
+  color:white;
+  background: #0f364c;
+}
+
+
+
+html body .onerow{
+ /*   white-space:  nowrap; */
+}
+html body .onerow .align-right{
+  text-align: right;
+}
+html body .onerow .align-center{
+  text-align: center;
+}
+
+html body .onerow .label,
+html body .onerow .label-top,
+html body .onerow .label-center{
+  font-weight:700;
+  text-align: right;
+  font-size: 18px;
+}
+
+html body .onerow .label-center{
+  line-height: 35px;
+}
+
+html body .onerow .label-top{
+  vertical-align: top
+}
+
+html body .onerow div{
+  font-size: 18px;
+}
+
+html body .onerow div p{
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  display: block;
+  font-size: 18px;
+  margin-bottom: 7px;
+}
+
+html body .tab-header{
+margin-bottom: 20px;
+}
+html body .onerow input[type="text"],
+html body .onerow select,
+html body .onerow input[type="email"],
+html body .onerow textarea
+{
+  width:100%;
+  outline: 0;
+  height:35px;
+  font-size: 18px;
+  border: 1px solid #a6a6a6;
+}
+html body .onerow input[type="text"]:focus,
+html body .onerow select:focus,
+html body .onerow textarea:focus
+html body .onerow input[type="email"]:focus{
+  outline: 0;
+  border: 2px solid #0f364c;
+}
+
+html body .onerow textarea{
+  display: inline-block;
+  vertical-align: baseline;   
+  font-size: 18px;
+}
+html body .onepcssgrid-1000, html body .onepcssgrid-1200 {
+  /*margin: 0 auto; */
+  padding: 0 0 0 1%; /* THAT'S THE NAME ;) */
+}
+
+.onepcssgrid-1200 {
+  max-width: 1220px;
+}
+
+.onepcssgrid-1000 {
+  max-width: 1020px;
+}
+
+.onerow {
+  overflow: visible;
+  display:block;  
+  clear: both;
+  padding: 0 10px;
+}
+
+
+
+
+
+/* *********************************************************************************************************************
+ * Common columns definitions
+ */
+.col1, .col2, .col3, .col4, .col5, .col6, .col7, .col8, .col9, .col10, .col11, .col12 {
+  float: left;
+  margin: 0 3% 0 0;
+}
+
+.col1.last, .col2.last, .col3.last, .col4.last, .col5.last, .col6.last, .col7.last, .col8.last, .col9.last, .col10.last, .col11.last, .col12 {
+  margin: 0;
+}
+
+.col1 { width: 5.5%; }
+.col2 { width: 14%; }
+.col3 { width: 22.5%; }
+.col4 { width: 31%; }
+.col5 { width: 39.5%; }
+.col6 { width: 48%; }
+.col7 { width: 56.5%; }
+.col8 { width: 65%; }
+.col9 { width: 73.5%; }
+.col10 { width: 82%; }
+.col11 { width: 90.5%; }
+.col12 { width: 99%; margin: 0; }
+
+.col1 img, .col2 img, .col3 img, .col4 img, .col5 img, .col6 img, .col7 img, .col8 img, .col9 img, .col10 img, .col11 img, .col12 img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+
+
+
+/* *********************************************************************************************************************
+ * Disable padding left/right 10px if I'm 1024 or gibber - correct percentage math
+ */
+@media all and (min-width: 1024px) {
+  .onepcssgrid-1000 {
+    max-width: 1000px;
+  }
+
+  .onepcssgrid-1000 .onerow {
+    padding: 0;
+  }
+}
+
+
+
+
+
+/* *********************************************************************************************************************
+ * Small devices
+ */
+@media all and (max-width: 768px) {
+  html body .onerow .label{
+    text-align: left;
+  }
+
+  .col1, .col2, .col3, .col4, .col5, .col6, .col7, .col8, .col9, .col10, .col11 {
+    float: none;
+    display: block;
+    width: 99%;
+  }
+}
