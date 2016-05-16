@@ -209,3 +209,11 @@ footer {
 .policy-box {
 	color: #fff;
 }
+
+.contact-form textarea {
+    background-image: linear-gradient(#EEE 1px, transparent 1px) !important;
+} 
+
+.contact-form input, .contact-form textarea {
+    border-bottom-color: #EEE !important;
+}
