@@ -35,11 +35,14 @@
 
 @media only screen and (min-width: 768px) {
 
+	#main-wrapper {
+		top: 100px;
+	}
 	.main-header {
-		background-color: #1f1b1c;
-		padding: 0;
 		position: fixed;
 		width: 100%;
+		background-color: #1f1b1c;
+		padding: 0;
 	}
 	.menu-bar.menu-skin-dark .ham,
 	.menu-bar.menu-skin-dark .ham:after,
@@ -56,6 +59,10 @@
 		z-index: 100;
 	}
 
+}
+
+.sidebar-box-holder {
+	margin-top: 20px;
 }
 
 .main-footer .big-footer {

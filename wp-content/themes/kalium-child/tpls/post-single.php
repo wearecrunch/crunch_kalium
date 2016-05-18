@@ -93,7 +93,14 @@ $author_info_details = $blog_author_info || ( $blog_post_date || $blog_category 
 		    			<?php include locate_template( 'tpls/post-single-author.php' ); ?>
 		    			<?php include locate_template( 'tpls/post-category-date.php' ); ?>
 	    			</div>
+
+	    			<div class="blog-sidebar">
+
+						<?php dynamic_sidebar( 'blog_sidebar' ); ?>
+
+					</div>
     			</div>
+
 
 
     			<?php elseif ( $blog_author_info && $blog_author_info_placement == 'bottom' ) : ?>
