@@ -38,7 +38,11 @@
 	#main-wrapper {
 		top: 100px;
 	}
-	.main-header {
+	.home #main-wrapper {
+		top: 0px;
+	}
+	.main-header,
+	.header-absolute .main-header {
 		position: fixed;
 		top: 0;
 		width: 100%;
@@ -60,6 +64,16 @@
 		z-index: 100;
 	}
 
+}
+
+#icl_lang_sel {
+	color: #ccc;
+}
+#icl_lang_sel span {
+	padding: 0 3px;
+}
+#icl_lang_sel a {
+	color: #fff;
 }
 
 /* Sidebar */
