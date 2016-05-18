@@ -105,7 +105,7 @@ class WPML_Installation extends WPML_WPDB_And_SP_User {
 	}
 
 	public function finish_step3( $ls_sidebars, $ls_options ) {
-		$ls_setup = new WPML_Language_Switcher_Settings( $ls_sidebars, $ls_options );
+		$ls_setup = new WPML_Setup_Language_Switcher_Settings( $ls_sidebars, $ls_options );
 		if ( $ls_sidebars ) {
 			$ls_setup->set_ls_sidebar();
 		}
@@ -123,7 +123,8 @@ class WPML_Installation extends WPML_WPDB_And_SP_User {
 	private function updated_active_languages() {
 		wp_cache_init();
 		icl_cache_clear();
-		$this->refresh_active_lang_cache( wpml_get_setting_filter( false, 'default_language' ) );
+		$this->refresh_active_lang_cache( wpml_get_setting_filter( false, 'default_language' ), true );
+		$this->update_languages_order();
 		wpml_reload_active_languages_setting( true );
 		$active_langs = $this->sitepress->get_active_languages( true );
 		$this->maybe_move_setup( 3 );
@@ -172,7 +173,8 @@ class WPML_Installation extends WPML_WPDB_And_SP_User {
 							= "
             SELECT
               l.code,
-              l.id, english_name,
+              l.id,
+              english_name,
               nt.name AS native_name,
               major,
               active,
@@ -211,6 +213,31 @@ class WPML_Installation extends WPML_WPDB_And_SP_User {
 		$this->sitepress->icl_language_name_cache->save_cache_if_requred( );
 		
 		return $languages;
+	}
+
+	private function update_languages_order() {
+		$needs_update  = false;
+		$current_order = $this->sitepress->get_setting( 'languages_order', array() );
+		if ( '' === $current_order ) {
+			$current_order = array();
+		}
+		$languages = $this->sitepress->get_languages( false, false, true );
+		$new_order = $current_order;
+		foreach ( $languages as $language_code => $language ) {
+			if ( ! in_array( $language_code, $new_order ) && '1' === $language['active'] ) {
+				$new_order[]  = $language_code;
+				$needs_update = true;
+			}
+			if ( in_array( $language_code, $new_order ) && '1' !== $language['active'] ) {
+				$new_order    = array_diff( $new_order, array( $language_code ) );
+				$needs_update = true;
+			}
+		}
+
+		if ( $needs_update ) {
+			$new_order = array_values( $new_order );
+			$this->sitepress->set_setting( 'languages_order', $new_order, true );
+		}
 	}
 
 	private function prepopulate_translations( $lang ) {
