@@ -48,6 +48,7 @@ $author_info_details = $blog_author_info || ( $blog_post_date || $blog_category 
 		    	?>">
 	    			<div class="row">
 		    			<div class="col-xs-12">
+
 			    			<div class="blog-content-holder">
 					    		<div class="section-title blog-title">
 						    		<h1><?php the_title(); ?></h1>
@@ -82,13 +83,17 @@ $author_info_details = $blog_author_info || ( $blog_post_date || $blog_category 
 		    				</div>
 		    			</div>
 
-						<?php get_template_part( 'tpls/post-single-share' ); ?>
-
 	    			</div>
     			</div>
 
 				<?php if ( $author_info_details && $blog_author_info_placement != 'bottom' ) : ?>
+
     			<div class="col-md-2 col-sm-3-x col-xs-12 clearfix">
+    				
+    				<div class="social-share-container">
+    					<?php get_template_part( 'tpls/post-single-share' ); ?>
+    				</div>
+
 	    			<div class="author-info-placement-<?php echo $blog_author_info_placement; ?>">
 		    			<?php include locate_template( 'tpls/post-single-author.php' ); ?>
 		    			<?php include locate_template( 'tpls/post-category-date.php' ); ?>
