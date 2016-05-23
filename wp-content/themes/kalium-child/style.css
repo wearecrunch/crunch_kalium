@@ -25,6 +25,7 @@
 	background: whitesmoke;
 	padding: 10px !important;
 }
+
 .message-form .form-group .placeholder {
 	border-bottom: 0;
 }
@@ -33,6 +34,17 @@
 .product-filter ul {
     float: left;
 }
+
+.team-image {
+	height: 200px;
+	width: 200px;
+}
+
+.col-md-4 {
+
+width: 20%;
+
+}	
 
 
 @media only screen and (min-width: 768px) {
@@ -91,6 +103,8 @@
 	margin-top: 0;
 	margin-bottom: 40px;
 }
+
+
 
 
 /* Footer */
