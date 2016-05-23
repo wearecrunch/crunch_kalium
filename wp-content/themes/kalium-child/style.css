@@ -51,7 +51,6 @@ width: 20%;
 
 }	
 
-
 @media only screen and (min-width: 768px) {
 
 	#main-wrapper {
@@ -90,6 +89,7 @@ width: 20%;
 }
 #icl_lang_sel span {
 	padding: 0 3px;
+	text-transform: uppercase;
 }
 #icl_lang_sel a {
 	color: #fff;
