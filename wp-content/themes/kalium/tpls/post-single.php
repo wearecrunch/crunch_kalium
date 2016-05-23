@@ -94,6 +94,8 @@ $author_info_details = $blog_author_info || ( $blog_post_date || $blog_category 
 		    			<?php include locate_template( 'tpls/post-category-date.php' ); ?>
 	    			</div>
     			</div>
+
+
     			<?php elseif ( $blog_author_info && $blog_author_info_placement == 'bottom' ) : ?>
     			<div class="col-md-12">
 	    			<div class="author-info-placement-<?php echo $blog_author_info_placement; ?>">

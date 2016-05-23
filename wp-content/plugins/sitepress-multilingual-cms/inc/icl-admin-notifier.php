@@ -14,7 +14,6 @@
 add_action ( 'init', array('ICL_AdminNotifier', 'init') );
 
 class ICL_AdminNotifier {
-
 	public static function init() {
 		if ( is_admin() ) {
 			add_action( 'wp_ajax_icl-hide-admin-message', array( __CLASS__, 'hide_message' ) );
@@ -49,6 +48,11 @@ class ICL_AdminNotifier {
 		self::save_messages( $messages );
 	}
 
+	/**
+	 * @param $message_id
+	 *
+	 * @return bool|array
+	 */
 	public static function get_message($message_id) {
 		$messages = self::get_messages();
 
@@ -125,7 +129,7 @@ class ICL_AdminNotifier {
 
 		$id = $args[ 'id' ];
 
-		//Check if existing message has been set as dismissed
+		//Check if existing message has been set as dismissed or hidden
 		if ( self::message_id_exists( $id ) ) {
 			$temp_msg = self::get_message( $id );
 
@@ -133,13 +137,7 @@ class ICL_AdminNotifier {
 				$current_user_id = get_current_user_id();
 				$message_user_data = isset( $temp_msg[ 'users' ][ $current_user_id ] ) ? $temp_msg[ 'users' ][ $current_user_id ] : false;
 
-				if ( ( !empty( $temp_msg[ 'dismiss_per_user' ] )
-				       && isset( $message_user_data[ 'dismissed' ] )
-				       && $message_user_data[ 'dismissed' ] )
-				     || ( !empty( $temp_msg[ 'dismiss' ] )
-				          && isset( $temp_msg[ 'dismissed' ] )
-				          && $temp_msg[ 'dismissed' ] )
-				) {
+				if ( self::is_user_dismissed( $temp_msg ) || self::is_globally_dismissed( $temp_msg ) || self::is_globally_hidden( $temp_msg ) ) {
 					return;
 				}
 
@@ -184,6 +182,21 @@ class ICL_AdminNotifier {
 			$messages[ 'messages' ][ $id ] = $message;
 			self::save_messages( $messages );
 		}
+	}
+
+	public static function is_user_dismissed( $message_data ) {
+		$current_user_id   = get_current_user_id();
+		$message_user_data = isset( $message_data['users'][ $current_user_id ] ) ? $message_data['users'][ $current_user_id ] : false;
+
+		return ! empty( $message_data['dismiss_per_user'] ) && ! empty( $message_user_data['dismissed'] );
+	}
+
+	public static function is_globally_dismissed( $message_data ) {
+		return ! empty( $message_data['dismiss'] ) && $message_data['dismissed'];
+	}
+
+	public static function is_globally_hidden( $message_data ) {
+		return ! empty( $message_data['hide'] ) && $message_data['hidden'];
 	}
 
 	public static function hide_message() {
@@ -434,7 +447,7 @@ class ICL_AdminNotifier {
 		}
 		$result .= '>';
 
-		$result .= '<div class="icl-admin-message-wrapper">' . stripslashes( $message );
+		$result .= '<div class="icl-admin-message-wrapper">' . self::sanitize_and_format_message( $message );
 		if ( $hide ) {
 			$result .= ' <a href="#" class="icl-admin-message-hide">' . __( 'Hide', 'sitepress' ) . '</a>';
 		}
@@ -483,7 +496,7 @@ class ICL_AdminNotifier {
 		}
 
 		$result = '<div class="' . implode( ' ', $classes ) . '">';
-		$result .= stripslashes( $message );
+		$result .= self::sanitize_and_format_message( $message );
 		$result .= '</div>';
 
 		if ( !$return ) {
@@ -736,5 +749,29 @@ class ICL_AdminNotifier {
 		return self::display_instant_message($message , $type, $class, $return);
 	}
 
+	/**
+	 * @param $message
+	 *
+	 * @return string
+	 */
+	public static function sanitize_and_format_message( $message ) {
+		//		return preg_replace( '/`(.*?)`/s', '<pre>$1</pre>', stripslashes( $message ) );
+		$backticks_pattern = '|`(.*)`|U';
+		preg_match_all( $backticks_pattern, $message, $matches );
+
+		$sanitized_message = $message;
+		if ( 2 === count( $matches ) ) {
+			$matches_to_sanitize = $matches[1];
+
+			foreach ( $matches_to_sanitize as &$match_to_sanitize ) {
+				$match_to_sanitize = '<pre>' . esc_html( $match_to_sanitize ) . '</pre>';
+			}
+			unset( $match_to_sanitize );
+
+			$sanitized_message = str_replace( $matches[0], $matches_to_sanitize, $sanitized_message );
+		}
+
+		return stripslashes($sanitized_message);
+	}
 }
 

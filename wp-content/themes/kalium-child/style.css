@@ -15,7 +15,92 @@
 */
 
 
+.message-form .form-group.absolute .placeholder {
+	position: relative;
+}
+.contact-form input,
+.contact-form textarea,
+.comment-form input,
+.comment-form textarea {
+	background: whitesmoke;
+	padding: 10px !important;
+}
+.message-form .form-group .placeholder {
+	border-bottom: 0;
+}
+
 
 .product-filter ul {
     float: left;
+}
+
+
+@media only screen and (min-width: 768px) {
+
+	#main-wrapper {
+		top: 100px;
+	}
+	.home #main-wrapper {
+		top: 0px;
+	}
+	.main-header,
+	.header-absolute .main-header {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		background-color: #1f1b1c;
+		padding: 0;
+	}
+	.menu-bar.menu-skin-dark .ham,
+	.menu-bar.menu-skin-dark .ham:after,
+	.menu-bar.menu-skin-dark .ham:before {
+		background-color: #fff;
+	}
+	.main-header.menu-type-full-bg-menu .full-screen-menu nav {
+		float: right;
+		text-align: right;
+		margin-top: 125px;
+	}
+
+	.main-footer.fixed-footer {
+		z-index: 100;
+	}
+
+}
+
+#icl_lang_sel {
+	color: #ccc;
+}
+#icl_lang_sel span {
+	padding: 0 3px;
+}
+#icl_lang_sel a {
+	color: #fff;
+}
+
+/* Sidebar */
+.sidebar-box-holder {
+	margin-top: 40px;
+}
+.social-share-container .col-xs-12 {
+	float: none;
+	padding-right: 0;
+	padding-left: 0;
+}
+.single-blog-holder .social-share-container .share-holder {
+	margin-top: 0;
+	margin-bottom: 40px;
+}
+
+
+/* Footer */
+
+.main-footer .big-footer {
+	margin: 0;
+}
+.main-footer .footer-links {
+	padding: 15px 0 10px;
+}
+.main-footer hr {
+	display: none;
 }
