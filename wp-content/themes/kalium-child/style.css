@@ -40,6 +40,11 @@
 	width: 200px;
 }
 
+.single-blog-holder .comments-holder {
+	background: #fff;
+
+	}
+
 .col-md-4 {
 
 width: 20%;
