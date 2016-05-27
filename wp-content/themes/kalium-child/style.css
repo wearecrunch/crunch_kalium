@@ -84,6 +84,8 @@ width: 20%;
 
 }
 
+
+/* Langugage selecter */
 #icl_lang_sel {
 	color: #ccc;
 }
@@ -93,6 +95,10 @@ width: 20%;
 }
 #icl_lang_sel a {
 	color: #fff;
+}
+#icl_lang_sel a:hover,
+#icl_lang_sel a:focus {
+	text-decoration: underline;
 }
 
 /* Sidebar */
