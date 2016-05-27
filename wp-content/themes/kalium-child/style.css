@@ -26,6 +26,12 @@
 	padding: 10px !important;
 }
 
+.wrapper a::after, footer.main-footer a::after {
+	background-color:transparent;
+
+}
+
+
 .message-form .form-group .placeholder {
 	border-bottom: 0;
 }
