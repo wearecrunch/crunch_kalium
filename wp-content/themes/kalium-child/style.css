@@ -26,9 +26,17 @@
 	padding: 10px !important;
 }
 
+.main-header.menu-type-full-bg-menu .full-screen-menu nav div.menu > ul > li > a::after,
+.main-header.menu-type-full-bg-menu .full-screen-menu nav ul.menu > li > a::after,
 .wrapper a::after, footer.main-footer a::after {
-	background-color:transparent;
+	background-color:transparent !important;
+}
 
+.menu .menu-item a:hover,
+.menu .menu-item a:focus,
+.menu .menu-item.current-menu-item {
+	background-color: #f3601d;
+	padding: 0 10px;
 }
 
 
