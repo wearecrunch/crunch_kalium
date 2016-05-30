@@ -43,7 +43,7 @@ $author_info_details = $blog_author_info || ( $blog_post_date || $blog_category 
     	<div class="page-container">
 			<div class="row">
     			<div class="<?php
-	    			echo $author_info_details && $blog_author_info_placement != 'bottom' ? 'col-md-10 col-sm-9-x' : 'col-xs-12'; 
+	    			echo $author_info_details && $blog_author_info_placement != 'bottom' ? 'col-md-8 col-sm-9-x' : 'col-xs-12'; 
 		    		echo $blog_author_info_placement == 'left' ? ' pull-right-md' : '';
 		    	?>">
 	    			<div class="row">
@@ -88,7 +88,7 @@ $author_info_details = $blog_author_info || ( $blog_post_date || $blog_category 
 
 				<?php if ( $author_info_details && $blog_author_info_placement != 'bottom' ) : ?>
 
-    			<div class="col-md-2 col-sm-3-x col-xs-12 clearfix">
+    			<div class="col-md-4 col-sm-3-x col-xs-12 clearfix">
     				
     				<div class="social-share-container">
     					<?php get_template_part( 'tpls/post-single-share' ); ?>

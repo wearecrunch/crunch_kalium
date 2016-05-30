@@ -24,6 +24,7 @@
 .comment-form textarea {
 	background: whitesmoke;
 	padding: 10px !important;
+	border-bottom-color: #eee;
 }
 
 .main-header.menu-type-full-bg-menu .full-screen-menu nav div.menu > ul > li > a::after,
@@ -46,11 +47,21 @@
 .sidebar-social .color:hover.google-plus,
 .social .color:hover.google,
 .social .color:hover.google-plus,
-.product-filter ul li a:hover {
+.product-filter ul li a:hover,
+.wrapper a:hover,
+footer.main-footer a:hover,
+.mobile-menu-wrapper .mobile-menu-container .cart-icon-link-mobile-container a:hover,
+.single-blog-holder .post-controls a:hover span,
+.single-blog-holder .post-controls .next-post:hover strong,
+.single-blog-holder .post-controls .prev-post:hover strong,
+.single-blog-holder .post-controls .next-post:hover i,
+.single-blog-holder .post-controls .prev-post:hover i {
 	color: #f3601d;
 }
 
-.project-multiple-links a {
+.project-multiple-links a,
+.comment-form .send,
+.btn {
 	color: #f3601d;
 	background-color: transparent;
 	background-image: none;
@@ -72,7 +83,9 @@
 .project-multiple-links a:hover,
 .project-multiple-links a:focus,
 .btn-primary,
-.checkout-button {
+.checkout-button,
+.comment-form .send:hover,
+.btn:hover {
 	color: #fff;
 	background-color: #f3601d !important;
 }
@@ -103,12 +116,8 @@
 
 .single-blog-holder .comments-holder {
 	background: #fff;
+}
 
-	}
-
-.col-md-4 {
-	width: 20%;
-}	
 
 @media only screen and (min-width: 768px) {
 
