@@ -38,6 +38,17 @@
 	background-color: #f3601d;
 	padding: 0 10px;
 }
+.sidebar-social .color:hover.facebook,
+.social .color:hover.facebook,
+.sidebar-social .color:hover.linkedin,
+.social .color:hover.linkedin,
+.sidebar-social .color:hover.google,
+.sidebar-social .color:hover.google-plus,
+.social .color:hover.google,
+.social .color:hover.google-plus,
+.product-filter ul li a:hover {
+	color: #f3601d;
+}
 
 
 .message-form .form-group .placeholder {
