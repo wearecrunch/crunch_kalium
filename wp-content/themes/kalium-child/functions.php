@@ -18,14 +18,14 @@ function enqueue_childtheme_scripts() {
 */
 function icl_post_languages(){
 	if( function_exists( 'icl_get_languages' ) ) {
-		$languages = icl_get_languages( 'skip_missing=0&orderby=code' );
+		$languages = icl_get_languages( 'skip_missing=0&orderby=code&order=DESC' );
 		if(!empty( $languages )){
 			foreach( $languages as $key => $l ){
 				if( $l['country_flag_url'] ){
 					if( !$l['active'] ) { echo '<a href="'.$l['url'].'">'; }
 						echo '<span>'. esc_attr( $l['language_code'] ) .'</span>';
 					if( !$l['active'] ) { echo '</a>'; }
-					if( $key == 'en' ) { echo ' | '; }
+					if( $key == 'da' ) { echo ' | '; }
 				}
 			}
 		}
