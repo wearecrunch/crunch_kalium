@@ -74,7 +74,9 @@
 	color: #fff;
 	background-color: #f3601d;
 }
-
+.portfolio-big-navigation {
+	margin-bottom: 50px;
+}
 
 .message-form .form-group .placeholder {
 	border-bottom: 0;
