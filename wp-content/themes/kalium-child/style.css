@@ -33,12 +33,7 @@
 	background-color:transparent !important;
 }
 
-.menu .menu-item a:hover,
-.menu .menu-item a:focus,
-.menu .menu-item.current-menu-item {
-	background-color: #f3601d;
-	padding: 0 10px;
-}
+
 .sidebar-social .color:hover.facebook,
 .social .color:hover.facebook,
 .sidebar-social .color:hover.linkedin,
@@ -55,7 +50,13 @@ footer.main-footer a:hover,
 .single-blog-holder .post-controls .next-post:hover strong,
 .single-blog-holder .post-controls .prev-post:hover strong,
 .single-blog-holder .post-controls .next-post:hover i,
-.single-blog-holder .post-controls .prev-post:hover i {
+.single-blog-holder .post-controls .prev-post:hover i,
+.menu .menu-item a:hover,
+.menu .menu-item a:focus,
+.menu .menu-item.current-menu-item a,
+.main-header.menu-type-full-bg-menu .full-screen-menu.menu-skin-dark nav ul li a:hover,
+.main-header.menu-type-full-bg-menu .full-screen-menu.menu-skin-dark nav ul li a:focus,
+.main-header.menu-type-full-bg-menu .full-screen-menu.menu-skin-dark nav ul li.current-menu-item a {
 	color: #f3601d;
 }
 
@@ -97,7 +98,6 @@ footer.main-footer a:hover,
 .services .container .wpb_row {
 	display: flex;
 	align-items: center;
-	text-align: center;
 }
 
 .message-form .form-group .placeholder {
