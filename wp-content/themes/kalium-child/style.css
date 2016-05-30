@@ -70,9 +70,11 @@
 	word-wrap: break-word;
 }
 .project-multiple-links a:hover,
-.project-multiple-links a:focus {
+.project-multiple-links a:focus,
+.btn-primary,
+.checkout-button {
 	color: #fff;
-	background-color: #f3601d;
+	background-color: #f3601d !important;
 }
 .portfolio-big-navigation {
 	margin-bottom: 50px;
@@ -105,9 +107,7 @@
 	}
 
 .col-md-4 {
-
-width: 20%;
-
+	width: 20%;
 }	
 
 @media only screen and (min-width: 768px) {
